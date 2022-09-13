@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - Prints the first 98 Fibonacci numbers
  * Return: Always 0.
@@ -12,6 +13,7 @@ int main(void)
 	n2 = 2;
 	boolean =  boolean2 = 1;
 	printf("%ld, %ld", n1, n2);
+
 	for (c = 0; c < 96; c++)
 	{
 		if (boolean)
