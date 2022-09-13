@@ -13,7 +13,6 @@ int main(void)
 	n2 = 2;
 	boolean =  boolean2 = 1;
 	printf("%ld, %ld", n1, n2);
-
 	for (c = 0; c < 96; c++)
 	{
 		if (boolean)
@@ -47,6 +46,5 @@ int main(void)
 			boolean = 0;
 	}
 	printf("\n");
-
 	return (0);
 }
