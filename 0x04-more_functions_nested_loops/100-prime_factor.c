@@ -26,7 +26,6 @@
  * have to refactor my code, starting with a i = 2 loop then start
  * my code with i=3. In this current code of mine, I have i = 2.
  */
-
 int main(void)
 {
 	unsigned long i = 2;
