@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * infinite_add - adds two numbers
@@ -9,6 +10,7 @@
  *
  * Return: address of r or 0
  */
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i, j, k, l, m, n;
