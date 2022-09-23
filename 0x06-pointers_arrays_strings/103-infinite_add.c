@@ -7,8 +7,7 @@
  * @n2: second number
  * @r: buffer for result
  * @size_r: buffer size
- *
- * Return: address of r or 0
+ * Return: the pointer to dest.
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
