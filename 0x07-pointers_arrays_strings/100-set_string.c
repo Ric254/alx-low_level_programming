@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * set_string - set  the value of a pointer to a char
- * 
- * @s: double pointer
- * @to: pointer to set
+ * set_string -sets the value of a pointer to a char
  *
- * Description: this print the chessboard
- * Return: a char
+ * @s: pointer to pointer to a char
+ *
+ * @to: the address to match
+ *
+ * Return: void
  */
 void set_string(char **s, char *to)
 {
