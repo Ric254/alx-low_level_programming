@@ -1,40 +1,35 @@
 #include "main.h"
-
 /**
 
- * _puts_recursion - print a string
-
- * _putchar - prints the string
-
- * @s: char to check
+ * _puts_recursion - Prints a string
 
  *
 
- * Return: 0 is success
+ * @s: char arg
+
+ *
+
+ * Return: void
 
  */
+
+
 
 void _puts_recursion(char *s)
 
 {
 
-	if (*s == '\0')
-
-	{
-
-		_putchar('\n');
-
-	}
-
-	else
+	if (*s)
 
 	{
 
 		_putchar(*s);
 
-		s++;
-
-		_puts_recursion(s);
+		_puts_recursion(s + 1);
 
 	}
+
+	else
+
+	_putchar('\n');
 
