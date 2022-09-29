@@ -2,22 +2,16 @@
 /**
  * _strlen_recursion - returns the length of a string
  * 
- * @s: pointer to a char to check
+ * @s: string
  *
- * Return: 0 is success
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int _strlen_recursion(char *s)
 {
-	int c;
-
-	if (*s == '\0')
+	if (*s != '\0')
 	{
-		return (0);
+		return (1 + _strlen_recursion(s + 1));
 	}
-	else
-	{
-		c = _strlen_recursion(s + 1);
-	}
-
-	return (c + 1);
+	return (0);
 }
