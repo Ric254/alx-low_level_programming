@@ -1,58 +1,48 @@
 #include "main.h"
 
 /**
- * strlen_rec - String length
+ * palind2 - obtains length of a
+ * @a: string
+ * @l: integer to count length
  *
- * @str: char
- *
- * Return: the integer length
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int strlen_rec(char *str)
+int palind2(char *a, int l)
 {
-	if (*str)
-	{
-		str++;
-
-		return (1 + strlen_rec(str));
-	}
-	return (0);
+	if (*a == 0)
+		return (l - 1);
+	return (palind2(a + 1, l + 1));
 }
 
 /**
- * helper_pal - Returns Palindrone
+ * palind3 - compares string vs string reverse
+ * @a: string
+ * @l: length
  *
- * @str: char
- *
- * @length: int
- * 
- * @count: int
- *
- * Return: the integer length
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int helper_pal(char *str, int length, int count)
+int palind3(char *a, int l)
 {
-	if (count >= length)
-	{
+	if (*a != *(a + l))
+		return (0);
+	else if (*a == 0)
 		return (1);
-	}
-	if (str[length] == str[count])
-	{
-		return (helper_pal(str, length - 1, count + 1));
-	}
-	return (0);
+	return (palind3(a + 1, l - 2));
 }
 
 /**
- * is_palindrome - returns 1 if a string is a palindrome and 0 if not
+ * is_palindrome - checks if a string is a palindrome
+ * @s: string to evaluate
  *
- * @s: char
- *
- * Return: the integer length
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int is_palindrome(char *s)
 {
-	int length = strlen_rec(s);
-	int count = 0;
+	int l;
 
-	return (helper_pal(s, length - 1, count));
+	l = palind2(s, 0);
+	return (palind3(s, l));
 }
