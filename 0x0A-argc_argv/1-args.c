@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * main - program that prints the number of arguments passed into it
+ * main - prints its name followed by a newline
  * @argc: number of arguments
- * @argv: array with the arguments
+ * @argv: the vector that hold the arguments
  *
  * Description: prints the number of arguments passed into the function
- * Return: always 0
+ * Return: always 0 if it works
  */
 int main(int argc, char **argv)
 {
