@@ -2,31 +2,44 @@
 #include <stdlib.h>
 
 /**
- * _strdup - returns a pointer to newly allocated memory
- * @str: a string given by main
+ * _strdup - copy of the string given as a parameter.
  *
- * Description: the returned memory allocation has
- * 	a copy of the string and can be freed
- * Return: the pointer or null if string is null
+ * @str: unsigned int
+ *
+ * Return: char pointer
  */
 char *_strdup(char *str)
 {
-	char *ptr;
-	int i = 0;
+	unsigned int counter1, counter2;
+	char *strCopy;
+
+	counter1 = 0;
+	counter2 = 0;
 
 	if (str == NULL)
-		return (NULL);
-	while (str[i])
-		i++;
-	ptr = malloc(sizeof(char) * i + 1);
-	if (ptr == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i])
 	{
-		ptr[i] = str[i];
-		i++;
+		return (0);
 	}
-	ptr[i] = str[i];
-	return (ptr);
+
+	while (str[counter1] != '\0')
+	{
+		counter1++;
+	}
+
+	strCopy = malloc(sizeof(char) * (counter1 + 1));
+
+	if (strCopy == NULL)
+	{
+		return (NULL);
+	}
+
+	while (counter2 < counter1)
+	{
+		strCopy[counter2] = str[counter2];
+		counter2++;
+	}
+
+	strCopy[counter2] = '\0';
+
+	return (strCopy);
 }
