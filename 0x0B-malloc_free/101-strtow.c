@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * number - function to calculate number of words
@@ -25,6 +26,7 @@ int number(char *str)
 	}
 	return (num);
 }
+
 /**
  * free_everything - frees the memory
  * @string: pointer values being passed for freeing
