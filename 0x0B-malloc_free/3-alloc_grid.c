@@ -1,45 +1,51 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * _strdup - copy of the string given as a parameter.
+ * **alloc_grid - function to allocate memory to grid
  *
- * @str: unsigned int
+ * @width: int arg
  *
- * Return: char pointer
+ * @height: int arg
+ *
+ * Return: grid of 0s
  */
-char *_strdup(char *str)
+int **alloc_grid(int width, int height)
 {
-	unsigned int counter1, counter2;
-	char *strCopy;
+	int col, row;
+	int **doublePtr;
 
-	counter1 = 0;
-	counter2 = 0;
-
-	if (str == NULL)
-	{
-		return (0);
-	}
-
-	while (str[counter1] != '\0')
-	{
-		counter1++;
-	}
-
-	strCopy = malloc(sizeof(char) * (counter1 + 1));
-
-	if (strCopy == NULL)
+	if (width < 1 || height < 1)
 	{
 		return (NULL);
 	}
 
-	while (counter2 < counter1)
+	doublePtr = malloc(height * sizeof(int *));
+
+	if (doublePtr == NULL)
 	{
-		strCopy[counter2] = str[counter2];
-		counter2++;
+		return (NULL);
 	}
 
-	strCopy[counter2] = '\0';
+	for (col = 0; col < height; col++)
+	{
+		doublePtr[col] = malloc(width * sizeof(int));
 
-	return (strCopy);
+		if (doublePtr[col] == NULL)
+		{
+			for (row = 0; row < col; row++)
+				free(doublePtr[row]);
+
+			free(doublePtr);
+			return (NULL);
+		}
+
+		for (row = 0; row < width; row++)
+		{
+			doublePtr[col][row] = 0;
+		}
+	}
+	return (doublePtr);
 }
+
