@@ -1,10 +1,5 @@
-/*
- * File: 0-malloc_checked.c
- * Auth: Brennan D Baraban
- */
-
 #include "main.h"
-#include <stdlib.hi>
+#include <stdlib.h>
 
 /**
  * malloc_checked - Allocates memory using malloc.
