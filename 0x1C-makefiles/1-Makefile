@@ -1,4 +1,3 @@
- (4 sloc)  68 Bytes
 CC = gcc
 SRC = main.c school.c
 all : $(SRC)
